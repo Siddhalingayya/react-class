@@ -1,139 +1,217 @@
-import React from "react";
+// import React from "react";
+import React from 'react';
 import { Link } from "react-router-dom";
 
+
+const navBarnames = [
+  {
+    name: 'My function',
+    path: '/'
+  },
+  {
+    name: 'Stylesheet',
+    path: '/stylesheet'
+  },
+  {
+    name: 'My form',
+    path: '/myform'
+  },
+  {
+    name: 'Message',
+    path: '/message'
+  },
+  {
+    name: 'Counter',
+    path: '/counter'
+  },
+  {
+    name: 'dynamiccontentcomponent',
+    path: '/dynamiccontentcomponent'
+  },
+  {
+    name: 'My Functional Component',
+    path: '/MyFunctionalComponent'
+  },
+  {
+    name: 'Greet',
+    path: '/Greet'
+  },
+  {
+    name: 'User Greeting',
+    path: '/UserGreeting'
+  },
+  {
+    name: 'Counter Component',
+    path: '/CounterComponent'
+  },
+  {
+    name: 'Event Bind',
+    path: '/EventBind'
+  },
+  {
+    name: 'Subscribe Btn',
+    path: '/SubscribeBtn'
+  },
+  {
+    name: 'Subscribe Button',
+    path: '/SubscribeButton'
+  },
+  {
+    name: 'Inline',
+    path: '/Inline'
+  },
+  {
+    name: 'Demo',
+    path: '/Demo'
+  },
+  {
+    name: 'About',
+    path: '/About'
+  },
+  {
+    name: 'Contact',
+    path: '/Contact'
+  },
+  {
+    name: 'Form',
+    path: '/Form'
+  },
+  {
+    name: 'ParentComponent',
+    path: '/ParentComponent'
+  },
+  {
+    name: 'Hello',
+    path: '/Hello'
+  },
+  {
+    name: 'classClick',
+    path: '/classClick'
+  },
+  {
+    name: 'Hello',
+    path: '/Hello'
+  },
+  {
+    name: 'Hello',
+    path: '/Hello'
+  },
+  {
+    name: 'Hello',
+    path: '/Hello'
+  },
+  {
+    name: 'My Functional Component',
+    path: '/MyFunctionalComponent'
+  },
+  {
+    name: 'LifeCycleB',
+    path: '/LifeCycleB'
+  },
+  {
+    name: 'Dropdown',
+    path: '/Dropdown'
+  },
+  {
+    name: 'LineChart',
+    path: '/LineChart'
+  },
+  {
+    name: 'LifeCycleB',
+    path: '/LifeCycleB'
+  },
+  {
+    name: 'ScrollableComponent',
+    path: '/ScrollableComponent'
+  },
+  {
+    name: 'Exam',
+    path: '/Exam'
+  },
+  {
+    name: 'Timer',
+    path: '/Timer'
+  },
+  {
+    name: 'Exam',
+    path: '/Exam'
+  },
+  {
+    name: 'FavoriteColor',
+    path: '/FavoriteColor'
+  },
+  {
+    name: 'Component1',
+    path: '/Component1'
+  },
+  {
+    name: 'FetchApi',
+    path: '/FetchApi'
+  },
+  {
+    name: 'MyComponent',
+    path: '/MyComponent'
+  },
+  {
+    name: 'Dropdown2',
+    path: '/Dropdown2'
+  },
+  {
+    name: 'Accordian',
+    path: '/Accordian'
+  },
+  {
+    name: 'CheckBox',
+    path: '/CheckBox'
+  },
+  {
+    name: 'CounterA',
+    path: '/CounterA'
+  },
+  {
+    name: 'Table',
+    path: 'Table'
+  },
+  {
+    name: 'CheckboxAndSelect',
+    path: '/CheckboxAndSelect'
+  },
+  {
+    name: 'PostList',
+    path: '/PostList'
+  },
+];
+
 function Navbar() {
+
+
+  
+  const newArray = navBarnames.sort((a, b) => {
+    let a1 = a.name.toLowerCase(),
+        b1 = b.name.toLowerCase();
+
+    if (a1 < b1) {
+        return -1;
+    }
+    if (a1 > b1) {
+        return 1;
+    }
+    return 0;
+  });
+
   return (
     <nav>
+      {/* <button onClick={sortAlphabetically}>Sort Alphabetically</button> */}
       <ul className="nav-bar">
-        <li className="nav">
-          <Link to="/">MyFunction</Link>
-        </li>
-        <li>
-          <Link to="/stylesheet">StyleSheet</Link>
-        </li>
-        <li>
-          <Link to="/myform">MyForm</Link>
-        </li>
-        <li>
-          <Link to="/message">Message</Link>
-        </li>
-        <li>
-          <Link to="/counter">Counter</Link>
-        </li>
-        <li>
-          <Link to="/dynamiccontentcomponent">DynamicContentComponent</Link>
-        </li>
-        <li>
-          <Link to="/Components">Components</Link>
-        </li>
-        <li>
-          <Link to="/MyFunctionalComponent">MyFunctionalComponent</Link>
-        </li>
-        <li>
-          <Link to="/NameList">NameList</Link>
-        </li>
-        <li>
-          <Link to="/Greet">Greet</Link>
-        </li>
-        <li>
-          <Link to="/UserGreeting">UserGreeting</Link>
-        </li>
-        <li>
-          <Link to="/CounterComponent">CounterComponent</Link>
-        </li>
-        <li>
-          <Link to="/EventBind">EventBind</Link>
-        </li>
-        <li>
-          <Link to="/SubscribeBtn">SubscribeBtn</Link>
-        </li>
-        <li>
-          <Link to="/SubscribeButton">SubscribeButton</Link>
-        </li>
-        <li>
-          <Link to="/Inline">Inline</Link>
-        </li>
-        <li>
-          <Link to="/Demo">Demo</Link>
-        </li>
-        <li>
-          <Link to="/About">About</Link>
-        </li>
-        <li>
-          <Link to="/Contact">Contact</Link>
-        </li>
-        <li>
-          <Link to="/Form">Form</Link>
-        </li>
-        <li>
-          <Link to="/ParentComponent">ParentComponent</Link>
-        </li>
-        <li>
-          <Link to="/Hello">Hello</Link>
-        </li>
-        <li>
-          <Link to="/classClick">classClick</Link>
-        </li>
-        <li>
-          <Link to="/Helloo">Helloo</Link>
-        </li>
-        <li>
-          <Link to="/MyFunctionalComponent">MyFunctionalComponent</Link>
-        </li>
-        <li>
-          <Link to="/LifeCycleB ">LifeCycleB </Link>
-        </li>
-        <li>
-          <Link to="/Dropdown ">Dropdown </Link>
-        </li>
-        <li>
-          <Link to="/LineChart ">LineChart </Link>
-        </li>
-        <li>
-          <Link to="/ScrollableComponent ">ScrollableComponent </Link>
-        </li>
-        <li>
-          <Link to="/Exam ">Exam </Link>
-        </li>
-        <li>
-          <Link to="/FavoriteColor ">FavoriteColor </Link>
-        </li>
-        <li>
-          <Link to="/Timer ">Timer </Link>
-        </li>
-        <li>
-          <Link to="/Component1 ">Component1 </Link>
-        </li>
-        <li>
-          <Link to="/NewApp ">NewApp </Link>
-        </li>
-        <li>
-          <Link to="/FetchApi ">FetchApi </Link>
-        </li>
-        <li>
-          <Link to="/PostList ">PostList </Link>
-        </li>
-        <li>
-          <Link to="/MyComponent ">MyComponent </Link>
-        </li>
-        <li>
-          <Link to="/Dropdown2 ">Dropdown2 </Link>
-        </li>
-        <li>
-          <Link to="/CheckBox ">CheckBox </Link>
-        </li>
-        <li>
-          <Link to="/CheckboxAndSelect ">CheckboxAndSelect </Link>
-        </li>
-        <li>
-          <Link to="/CounterA ">CounterA </Link>
-        </li>
-        <li>
-          <Link to="/Table ">Table </Link>
-        </li>
-        <li>
-          <Link to="/Accordian ">Accordian </Link>
-        </li>
+
+      {
+        newArray.map((item, index) => {
+          return <li className="nav" key={index}>
+            <Link to={item.path}>{item.name}</Link>
+          </li>
+        })
+      }
+       
       </ul>
     </nav>
   );
